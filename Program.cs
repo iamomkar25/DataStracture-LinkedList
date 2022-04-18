@@ -22,10 +22,21 @@ namespace linked_list
             //  linkedList.Display();
             //   Console.ReadLine();
             CustomLinkedList linkedList = new CustomLinkedList();
-            linkedList.Append(30);
-            linkedList.Append(40);
-            linkedList.Append(60);
+            // linkedList.Append(30);
+            // linkedList.Append(40);
+            //  linkedList.Append(60);
+            //  linkedList.Display();
+            //  Console.ReadLine();
+
+            linkedList.AddAtLast(56);
+            // linkedList.AddAtLast(30);
+            linkedList.AddAtLast(70);
+            // linkedList.Display();                     
+            linkedList.InsertAtParticularPosition(2, 30);
+            // Console.WriteLine("\n{0}is deleted from the Linkedlist",linkedList.DeleteFirstNode());
+            //Console.WriteLine("\n{0} is deleted from linkedlist",linkedList.DeleteLastNode());
             linkedList.Display();
+            //Console.WriteLine("\n{0} is present", linkedList.Search(30));
             Console.ReadLine();
         }
 

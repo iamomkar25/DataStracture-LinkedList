@@ -73,5 +73,84 @@ namespace linked_list
         {
             AddAtLast(data);
         }
+
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range {position}");
+            }
+            Console.WriteLine("\nInserted Value is  ", head);
+            return head;
+
+        }
+        public int DeleteFirstNode()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked list empty");
+                return 0;
+            }
+            int deleteNode = this.head.data;
+            this.head = this.head.next;
+            Console.WriteLine("\n{0} is deleted from the list", deleteNode);
+            return deleteNode;
+        }
+        public int DeleteLastNode()
+        {
+            Node newNode = this.head;
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked List empty");
+                return 0;
+            }
+            if (this.head.next == null)
+            {
+                this.head = null;
+                return 0;
+            }
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            int lastDeleteNode = newNode.next.data;
+            newNode.next = null;
+            return lastDeleteNode;
+        }
+        public int Search(int value)
+        {
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                                                     //Console.WriteLine("\nNode is present");
+                    return value;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("\n{0} is not present", value);
+            return 0;
+        }
+        }
     }
-}
