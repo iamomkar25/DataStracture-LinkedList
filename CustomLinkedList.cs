@@ -8,9 +8,8 @@ namespace linked_list
 {
     internal class CustomLinkedList
     {
-        public Node head;
-        private int new_data;
 
+        public Node head;
         public void AddAtLast(int data)
         {
             Node newNode = new Node(data);
@@ -56,36 +55,6 @@ namespace linked_list
             }
 
         }
-        internal Node InsertAtParticularPosition(int position, int data)
-        {
-            if (position < 1)
-                Console.WriteLine("Invalid position");
-            if (position >= 1)
-            {
-                var newNode = new Node(data);
-                newNode.next = this.head;
-                head = newNode;
-            }
-            else
-            {
-                while (position-- != 0)
-                {
-                    if (position == 1)
-                    {
-                        Node node = new Node(data);
-                        node.next = this.head;
-                        head.next = node;
-                        break;
-                    }
-                    head = head.next;
-                }
-                if (position != 1)
-                    Console.WriteLine("Position out of range");
-            }
-            Console.WriteLine("\nInserted Value is  ", head);
-            return head;
-
-        }
         public void AddAtFirst(int new_data)
         {
             // creating a node
@@ -100,6 +69,36 @@ namespace linked_list
         {
             AddAtLast(data);
         }
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range {position}");
+            }
+            Console.WriteLine("\nInserted Value is  ", head);
+            return head;
+
+        }
         public int DeleteFirstNode()
         {
             if (this.head == null)
@@ -112,7 +111,6 @@ namespace linked_list
             Console.WriteLine("\n{0} is deleted from the list", deleteNode);
             return deleteNode;
         }
-
         public int DeleteLastNode()
         {
             Node newNode = this.head;
@@ -134,8 +132,6 @@ namespace linked_list
             newNode.next = null;
             return lastDeleteNode;
         }
-
-
         public int Search(int value)
         {
             Node temp = this.head;
@@ -151,6 +147,29 @@ namespace linked_list
             Console.WriteLine("\n{0} is not present", value);
             return 0;
 
+        }
+        public void InsertAfterValue(int after, int data)
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+            }
+            else
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    if (temp.data == after)
+                    {
+                        Node node = new Node(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                Console.WriteLine("Successfull added Element {after} After {data}");
+            }
         }
     }
     }

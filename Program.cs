@@ -44,14 +44,22 @@ namespace linked_list
             // my_line.AddLast(70);
             //my_line.AddFirst(300);
             CustomLinkedList linkedList = new CustomLinkedList();
-            linkedList.AddAtLast(56);
-            linkedList.AddAtLast(30);
-            linkedList.AddAtLast(70);
-            linkedList.Display();
+            // linkedList.AddAtLast(56);
+            // linkedList.AddAtLast(30);
+            // linkedList.AddAtLast(70);
+            // linkedList.Display();
             //  linkedList.InsertAtParticularPosition(2, 30);
-           // Console.WriteLine("{0} is deleted from the Linkedlist", linkedList.DeleteLastNode());
-           // linkedList.Display();
-            Console.WriteLine("\n{0} is present", linkedList.Search(30));
+            // Console.WriteLine("{0} is deleted from the Linkedlist", linkedList.DeleteLastNode());
+            // linkedList.Display();
+            //Console.WriteLine("\n{0} is present", linkedList.Search(30));
+            // Console.ReadLine();
+
+            linkedList.AddAtLast(56);//adding data in list
+            linkedList.AddAtLast(30);//adding data in list
+            linkedList.AddAtLast(70);//adding data in list
+            linkedList.Display();    //call display method to print data
+            linkedList.InsertAfterValue(30, 40);//call InsertAtAfterValue Pass value
+            linkedList.Display();
             Console.ReadLine();
         }
 
