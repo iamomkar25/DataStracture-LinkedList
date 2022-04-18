@@ -15,15 +15,21 @@ namespace linked_list
             // my_line.AddLast(10);
             // my_line.AddLast(70);
             //my_line.AddFirst(300);
+            // CustomLinkedList linkedList = new CustomLinkedList();
+            //  linkedList.AddAtFirst(30);
+            //  linkedList.AddAtFirst(40);
+            //  linkedList.AddAtFirst(60);
+            //  linkedList.Display();
+            //   Console.ReadLine();
             CustomLinkedList linkedList = new CustomLinkedList();
-            linkedList.AddAtFirst(30);
-            linkedList.AddAtFirst(40);
-            linkedList.AddAtFirst(60);
+            linkedList.Append(30);
+            linkedList.Append(40);
+            linkedList.Append(60);
             linkedList.Display();
             Console.ReadLine();
         }
 
 
-        }
+    }
     
 }

@@ -25,6 +25,7 @@ namespace linked_list
                 lastnode.next = newNode;
 
             }
+            Console.WriteLine("{0} Node inserted into linkedlist", newNode.data);
         }
         private Node GetLastNode()
         {
@@ -66,6 +67,11 @@ namespace linked_list
                                                     //the previous Head node is no=w the second node of linked list
             this.head = new_node;
             Console.WriteLine("{0} Node inserted into linkedlist", new_node.data);
+        }
+
+        public void Append(int data)
+        {
+            AddAtLast(data);
         }
     }
 }
