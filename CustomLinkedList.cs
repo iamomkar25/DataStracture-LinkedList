@@ -134,5 +134,23 @@ namespace linked_list
             newNode.next = null;
             return lastDeleteNode;
         }
+
+
+        public int Search(int value)
+        {
+            Node temp = this.head;
+            while (temp != null)
+            {
+                if (temp.data == value)
+                {
+                    //Console.WriteLine("\nNode is present");
+                    return value;
+                }
+                temp = temp.next;
+            }
+            Console.WriteLine("\n{0} is not present", value);
+            return 0;
+
+        }
     }
     }

@@ -49,8 +49,9 @@ namespace linked_list
             linkedList.AddAtLast(70);
             linkedList.Display();
             //  linkedList.InsertAtParticularPosition(2, 30);
-            Console.WriteLine("{0} is deleted from the Linkedlist", linkedList.DeleteLastNode());
-            linkedList.Display();
+           // Console.WriteLine("{0} is deleted from the Linkedlist", linkedList.DeleteLastNode());
+           // linkedList.Display();
+            Console.WriteLine("\n{0} is present", linkedList.Search(30));
             Console.ReadLine();
         }
 
